@@ -100,6 +100,8 @@ public class MainActivity extends AppCompatActivity implements MainView {
             PhotoResponse dataResponse = response.getResponse();
             photos.addAll(dataResponse.getPhotos());
             recycleAdapter.notifyItemRangeInserted(dataResponse.getPage()*dataResponse.getPerpage(), dataResponse.getPerpage());
+        } else {
+            this.showMessage("An error occured!");
         }
     }
 
